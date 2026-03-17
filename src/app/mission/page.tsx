@@ -129,14 +129,14 @@ export default function MissionPage() {
   }
 
   return (
-    <div className="min-h-screen bg-amber-50 flex flex-col">
-      <div className="bg-white border-b px-4 py-3 flex justify-between items-center">
-        <h1 className="font-bold text-lg">
+    <div className="min-h-screen bg-slate-50 flex flex-col">
+      <div className="bg-white border-b border-slate-200 px-4 py-3 flex justify-between items-center">
+        <h1 className="font-bold text-lg text-slate-900">
           {childName ? `${childName}의 미션` : "미션"}
         </h1>
         <button
           onClick={() => router.push("/dashboard")}
-          className="text-sm text-gray-500 hover:text-gray-700"
+          className="text-sm text-indigo-600 font-semibold hover:text-indigo-700"
         >
           부모 대시보드
         </button>
@@ -157,7 +157,7 @@ export default function MissionPage() {
 
         {loading && (
           <div className="flex justify-start mb-3">
-            <div className="bg-white border border-gray-200 px-4 py-3 rounded-2xl rounded-bl-md text-sm text-gray-400">
+            <div className="bg-white border border-slate-200 px-4 py-3 rounded-2xl rounded-bl-md text-sm text-slate-500">
               생각 중...
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function MissionPage() {
 
         {missions.length > 0 && (
           <div className="space-y-3 mt-4">
-            <p className="text-sm font-semibold text-gray-600">
+            <p className="text-sm font-semibold text-slate-700">
               이번 주 미션을 골라봐!
             </p>
             {missions.map((m, i) => (
@@ -183,7 +183,7 @@ export default function MissionPage() {
       </div>
 
       {missions.length === 0 && (
-        <div className="p-4 bg-white border-t">
+        <div className="p-4 bg-white border-t border-slate-200">
           <ChatInput onSend={handleSend} disabled={loading} />
         </div>
       )}

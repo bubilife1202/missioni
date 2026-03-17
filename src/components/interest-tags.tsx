@@ -36,8 +36,8 @@ export function InterestTags({ selected, onChange }: Props) {
           onClick={() => toggle(tag)}
           className={`flex items-center gap-2 px-4 py-3 rounded-xl border-2 text-left transition-all ${
             selected.includes(tag)
-              ? "border-amber-500 bg-amber-50 font-semibold"
-              : "border-gray-200 hover:border-gray-300"
+              ? "border-indigo-500 bg-indigo-50 font-semibold text-slate-900"
+              : "border-slate-200 hover:border-slate-300 text-slate-700"
           }`}
         >
           <span className="text-xl">{emoji}</span>

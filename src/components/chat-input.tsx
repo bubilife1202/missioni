@@ -26,12 +26,12 @@ export function ChatInput({ onSend, disabled, placeholder }: Props) {
         onChange={(e) => setText(e.target.value)}
         placeholder={placeholder || "메시지를 입력해봐!"}
         disabled={disabled}
-        className="flex-1 px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-400 disabled:opacity-50"
+        className="flex-1 px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 text-slate-900 placeholder:text-slate-400 disabled:opacity-50"
       />
       <button
         type="submit"
         disabled={disabled || !text.trim()}
-        className="px-6 py-3 bg-amber-500 text-white rounded-xl font-semibold hover:bg-amber-600 disabled:opacity-50"
+        className="px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 disabled:opacity-50"
       >
         보내기
       </button>

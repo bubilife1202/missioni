@@ -33,27 +33,27 @@ export default async function DashboardPage() {
   ).length;
 
   return (
-    <div className="min-h-screen bg-amber-50">
-      <div className="bg-white border-b px-4 py-3 flex justify-between items-center">
-        <h1 className="font-bold text-lg">부모 대시보드</h1>
+    <div className="min-h-screen bg-slate-50">
+      <div className="bg-white border-b border-slate-200 px-4 py-3 flex justify-between items-center">
+        <h1 className="font-bold text-lg text-slate-900">부모 대시보드</h1>
         <Link
           href="/mission"
-          className="text-sm text-amber-600 font-semibold"
+          className="text-sm text-indigo-600 font-semibold hover:text-indigo-700"
         >
           미션 화면 →
         </Link>
       </div>
 
       <div className="p-4 max-w-lg mx-auto">
-        <div className="bg-white rounded-xl p-4 border mb-4">
-          <h2 className="font-bold text-lg">
+        <div className="bg-white rounded-xl p-4 border border-slate-200 shadow-sm mb-4">
+          <h2 className="font-bold text-lg text-slate-900">
             {child.name} ({child.age}살)
           </h2>
           <div className="flex gap-2 mt-2 flex-wrap">
             {(child.interests as string[]).map((tag: string) => (
               <span
                 key={tag}
-                className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs"
+                className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs"
               >
                 {tag}
               </span>
@@ -62,27 +62,27 @@ export default async function DashboardPage() {
         </div>
 
         <div className="grid grid-cols-2 gap-3 mb-6">
-          <div className="bg-white rounded-xl p-4 border text-center">
+          <div className="bg-white rounded-xl p-4 border border-slate-200 shadow-sm text-center">
             <p className="text-2xl font-bold text-green-600">
               {completedCount}
             </p>
-            <p className="text-xs text-gray-500">완료한 미션</p>
+            <p className="text-xs text-slate-600">완료한 미션</p>
           </div>
-          <div className="bg-white rounded-xl p-4 border text-center">
-            <p className="text-2xl font-bold text-amber-600">
+          <div className="bg-white rounded-xl p-4 border border-slate-200 shadow-sm text-center">
+            <p className="text-2xl font-bold text-indigo-600">
               {inProgressCount}
             </p>
-            <p className="text-xs text-gray-500">진행 중</p>
+            <p className="text-xs text-slate-600">진행 중</p>
           </div>
         </div>
 
-        <h3 className="font-semibold mb-3">미션 기록</h3>
+        <h3 className="font-semibold mb-3 text-slate-900">미션 기록</h3>
         <div className="space-y-3">
           {(missions || []).length === 0 && (
-            <p className="text-sm text-gray-400 text-center py-8">
+            <p className="text-sm text-slate-500 text-center py-8">
               아직 미션이 없어요.
               <br />
-              <Link href="/mission" className="text-amber-600 underline">
+              <Link href="/mission" className="text-indigo-600 underline hover:text-indigo-700">
                 첫 미션을 시작해보세요!
               </Link>
             </p>
@@ -94,14 +94,14 @@ export default async function DashboardPage() {
               <Link
                 key={mission.id as string}
                 href={`/mission/${mission.id}`}
-                className="block bg-white rounded-xl p-4 border hover:border-amber-300 transition-all"
+                className="block bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:border-indigo-300 transition-all"
               >
                 <div className="flex justify-between items-start">
                   <div>
-                    <p className="font-medium text-sm">
+                    <p className="font-medium text-sm text-slate-900">
                       {mission.title as string}
                     </p>
-                    <p className="text-xs text-gray-500 mt-1">
+                    <p className="text-xs text-slate-600 mt-1">
                       {doneSteps}/{steps.length} 단계 완료
                     </p>
                   </div>
@@ -109,13 +109,13 @@ export default async function DashboardPage() {
                     className={`px-2 py-1 rounded-full text-xs ${
                       mission.status === "completed"
                         ? "bg-green-100 text-green-700"
-                        : "bg-amber-100 text-amber-700"
+                        : "bg-indigo-100 text-indigo-700"
                     }`}
                   >
                     {mission.status === "completed" ? "완료" : "진행 중"}
                   </span>
                 </div>
-                <div className="mt-3 h-2 bg-gray-100 rounded-full overflow-hidden">
+                <div className="mt-3 h-2 bg-slate-100 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-green-400 rounded-full transition-all"
                     style={{

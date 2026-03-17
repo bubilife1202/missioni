@@ -12,8 +12,8 @@ export function ChatBubble({ message }: Props) {
       <div
         className={`max-w-[80%] px-4 py-3 rounded-2xl text-sm leading-relaxed ${
           isUser
-            ? "bg-amber-500 text-white rounded-br-md"
-            : "bg-white border border-gray-200 rounded-bl-md"
+            ? "bg-indigo-600 text-white rounded-br-md"
+            : "bg-white border border-slate-200 text-slate-900 rounded-bl-md"
         }`}
       >
         {message.content}

@@ -103,7 +103,7 @@ export default function MissionDetailPage({
 
   if (!mission) {
     return (
-      <div className="min-h-screen bg-amber-50 flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center text-slate-900">
         로딩 중...
       </div>
     );
@@ -112,17 +112,17 @@ export default function MissionDetailPage({
   const allDone = mission.steps.every((s: MissionStep) => s.done);
 
   return (
-    <div className="min-h-screen bg-amber-50">
-      <div className="bg-white border-b px-4 py-3 flex items-center gap-3">
+    <div className="min-h-screen bg-slate-50">
+      <div className="bg-white border-b border-slate-200 px-4 py-3 flex items-center gap-3">
         <button
           onClick={() => router.push("/dashboard")}
-          className="text-gray-500"
+          className="text-slate-600 hover:text-slate-900"
         >
           ←
         </button>
         <div>
-          <h1 className="font-bold">{mission.title}</h1>
-          <p className="text-xs text-gray-500">{mission.description}</p>
+          <h1 className="font-bold text-slate-900">{mission.title}</h1>
+          <p className="text-xs text-slate-600">{mission.description}</p>
         </div>
       </div>
 
@@ -139,7 +139,7 @@ export default function MissionDetailPage({
             <p className="text-sm text-green-600 mt-1">정말 잘했어!</p>
             <button
               onClick={() => router.push("/mission")}
-              className="mt-4 px-6 py-2 bg-amber-500 text-white rounded-xl text-sm font-semibold"
+              className="mt-4 px-6 py-2 bg-indigo-600 text-white rounded-xl text-sm font-semibold hover:bg-indigo-700"
             >
               다음 미션 받기
             </button>
@@ -150,19 +150,19 @@ export default function MissionDetailPage({
           <div className="mt-6">
             <button
               onClick={() => setShowChat(!showChat)}
-              className="w-full py-3 border-2 border-amber-300 text-amber-600 rounded-xl font-semibold hover:bg-amber-50"
+              className="w-full py-3 border-2 border-indigo-300 text-indigo-600 rounded-xl font-semibold hover:bg-indigo-50"
             >
               {showChat ? "도움 닫기" : "도움이 필요해! 💬"}
             </button>
 
             {showChat && (
-              <div className="mt-4 bg-white rounded-xl border p-4">
+              <div className="mt-4 bg-white rounded-xl border border-slate-200 shadow-sm p-4">
                 <div className="max-h-60 overflow-y-auto mb-3 space-y-1">
                   {chatMessages.map((msg, i) => (
                     <ChatBubble key={i} message={msg} />
                   ))}
                   {chatLoading && (
-                    <div className="text-sm text-gray-400 px-4">
+                    <div className="text-sm text-slate-500 px-4">
                       생각 중...
                     </div>
                   )}

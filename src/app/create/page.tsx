@@ -115,15 +115,15 @@ export default function CreatePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-amber-50 flex flex-col">
+    <div className="min-h-screen bg-slate-50 flex flex-col">
       {/* 헤더 */}
-      <div className="bg-white border-b px-4 py-3 flex justify-between items-center">
-        <h1 className="font-bold text-lg">
+      <div className="bg-white border-b border-slate-200 px-4 py-3 flex justify-between items-center">
+        <h1 className="font-bold text-lg text-slate-900">
           {childName ? `${childName}의 만들기` : "만들기"}
         </h1>
         <button
           onClick={() => router.push("/mission")}
-          className="text-sm text-gray-500 hover:text-gray-700"
+          className="text-sm text-indigo-600 font-semibold hover:text-indigo-700"
         >
           미션으로 →
         </button>
@@ -147,7 +147,7 @@ export default function CreatePage() {
 
             {loading && (
               <div className="flex justify-start mb-3">
-                <div className="bg-white border border-gray-200 px-4 py-3 rounded-2xl rounded-bl-md text-sm text-gray-400">
+                <div className="bg-white border border-slate-200 px-4 py-3 rounded-2xl rounded-bl-md text-sm text-slate-500">
                   만드는 중... ✨
                 </div>
               </div>
@@ -156,7 +156,7 @@ export default function CreatePage() {
             <div ref={bottomRef} />
           </div>
 
-          <div className="p-4 bg-white border-t flex gap-2">
+          <div className="p-4 bg-white border-t border-slate-200 flex gap-2">
             <div className="flex-1">
               <ChatInput
                 onSend={handleSend}
@@ -170,12 +170,12 @@ export default function CreatePage() {
 
         {/* 미리보기 영역 */}
         {previewHtml && (
-          <div className="lg:w-1/2 border-l bg-white flex flex-col">
-            <div className="px-4 py-3 border-b flex justify-between items-center">
-              <span className="font-semibold text-sm">미리보기</span>
+          <div className="lg:w-1/2 border-l border-slate-200 bg-white flex flex-col">
+            <div className="px-4 py-3 border-b border-slate-200 flex justify-between items-center">
+              <span className="font-semibold text-sm text-slate-900">미리보기</span>
               <button
                 onClick={handleShare}
-                className="px-4 py-1.5 bg-purple-500 text-white rounded-lg text-sm font-semibold hover:bg-purple-600"
+                className="px-4 py-1.5 bg-indigo-600 text-white rounded-lg text-sm font-semibold hover:bg-indigo-700"
               >
                 {shareUrl ? "✅ 링크 복사됨!" : "친구한테 공유하기"}
               </button>
