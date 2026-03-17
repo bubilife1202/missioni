@@ -32,7 +32,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-amber-50 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <div className="w-full max-w-sm bg-white rounded-2xl shadow-lg p-8">
         <h1 className="text-2xl font-bold text-center mb-2">missioni</h1>
         <p className="text-gray-500 text-center mb-6 text-sm">
@@ -46,7 +46,7 @@ export default function LoginPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-400"
+            className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-400 text-gray-900 placeholder:text-gray-400"
           />
           <input
             type="password"
@@ -55,7 +55,7 @@ export default function LoginPage() {
             onChange={(e) => setPassword(e.target.value)}
             required
             minLength={6}
-            className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-400"
+            className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-400 text-gray-900 placeholder:text-gray-400"
           />
 
           {error && <p className="text-red-500 text-sm">{error}</p>}
@@ -63,7 +63,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-amber-500 text-white rounded-xl font-semibold hover:bg-amber-600 disabled:opacity-50"
+            className="w-full py-3 bg-gray-500 text-white rounded-xl font-semibold hover:bg-amber-600 disabled:opacity-50"
           >
             {loading ? "..." : isSignUp ? "가입하기" : "로그인"}
           </button>
